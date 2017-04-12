@@ -1,0 +1,22 @@
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Updated</th>
+			<th>Time Stamp</th>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% for post in post_list %}
+			<tr>
+				<td>
+					<a href="{% url 'posts:detail' post.id %}">{{ post.title }}</a><br/>
+				<td>
+				<td>{{ post.updated }}</td>
+				<td>{{ post.timestamp }}</td>
+				<td></td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
