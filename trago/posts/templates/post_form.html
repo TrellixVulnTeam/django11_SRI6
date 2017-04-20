@@ -1,5 +1,17 @@
+{% extends "base.html" %}
+{% block head_title %}{{block.super}} || {{ title }} {% endblock head_title %}
+
+{% block content %}
+
+<div class="col-sm-6 col-sm-offset-3">
 <h1>Form</h1>
-<form action="" method="post">{% csrf_token %}
+
+<form action="" enctype="multipart/form-data"  method="post">{% csrf_token %}
 	{{ form.as_p }}
-<input type="submit" name="Create Post">
+<input type="submit" class="btn btn-default" name="Create Post">
+<a href="{% url 'posts:list' %}">Go back to list</a>
 </form>
+</div>
+
+
+{% endblock content %}
